@@ -24,6 +24,7 @@
         android:layout_marginTop="16dp"
         android:textSize="24sp"
         android:hint="@string/email"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/tvLogin"
         app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
@@ -34,6 +35,7 @@
         android:layout_marginTop="16dp"
         android:textSize="24sp"
         android:hint="@string/password"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
