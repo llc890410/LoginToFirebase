@@ -22,18 +22,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="XXX"
-        android:textSize="42sp"
-        app:layout_constraintStart_toEndOf="@+id/tvHello"
-        app:layout_constraintTop_toTopOf="@+id/tvHello" />
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="@+id/tvHello"
+        app:layout_constraintTop_toBottomOf="@+id/tvHello" />
 
     <Button
         android:id="@+id/btnChangePassword"
         android:layout_width="336dp"
         android:layout_height="72dp"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"
         android:text="@string/Change_password"
-        app:layout_constraintStart_toStartOf="@+id/tvHello"
-        app:layout_constraintTop_toBottomOf="@+id/tvHello" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tvUsername"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
