@@ -28,6 +28,8 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     FirebaseUser user;
 
+    Boolean check = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,25 +47,43 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 newPassword = etNewPassword.getText().toString();
                 typeAgain = etTypeAgain.getText().toString();
 
-                //檢查是否大於6字 是否相等
+                check = true;
 
-                if(newPassword.equals(typeAgain)) {
-                    user.updatePassword(newPassword)
+                if (newPassword.length() < 6) {
+                    Toast.makeText(ChangePasswordActivity.this,
+                            "Password length should be more than or equal to 6",Toast.LENGTH_LONG).show();
+                    Log.d(TAG,"Password length is not more than or equal to 6");
+                    check = false;
+                }
+
+                if (!newPassword.equals(typeAgain)){
+                    Toast.makeText(ChangePasswordActivity.this,
+                            "Password is not equal",Toast.LENGTH_LONG).show();
+                    Log.d(TAG,"Password is not equal");
+                    check = false;
+                }
+
+                if (check) {
+                        user.updatePassword(newPassword)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     Toast.makeText(ChangePasswordActivity.this,
-                                            "Change Password Successful",Toast.LENGTH_LONG).show();
+                                            "Change Password Successful",Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, "Change Password Successful");
                                     Log.d(TAG, "New password:"+newPassword);
+
+                                    Intent intent = new Intent();
+                                    intent.setClass(ChangePasswordActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
                             });
+                } else {
+                    etNewPassword.setText("");
+                    etTypeAgain.setText("");
                 }
 
-                Intent intent = new Intent();
-                intent.setClass(ChangePasswordActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
 
