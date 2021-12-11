@@ -2,6 +2,7 @@ package com.example.loginfirebase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,15 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
                     }
                 });
+
+                //switch to MainActivity
+                Intent intent = new Intent();
+                intent.setClass(LoginActivity.this, MainActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("email",email);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                finish();
 
             }
         });
