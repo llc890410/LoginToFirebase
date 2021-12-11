@@ -8,13 +8,16 @@ import android.widget.EditText;
 
 public class ChangePasswordActivity extends AppCompatActivity {
 
+    EditText etNewPassword,etTypeAgain;
+    Button btnSubmit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
-        EditText etNewPassword = findViewById(R.id.etNewPassword);
-        EditText etTypeAgain = findViewById(R.id.etTypeAgain);
-        Button btnSubmit = findViewById(R.id.btnSubmit);
+        etNewPassword = findViewById(R.id.etNewPassword);
+        etTypeAgain = findViewById(R.id.etTypeAgain);
+        btnSubmit = findViewById(R.id.btnSubmit);
     }
 }

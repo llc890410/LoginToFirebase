@@ -7,11 +7,13 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btnChangePassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnChangePassword = findViewById(R.id.btnChangePassword);
+        btnChangePassword = findViewById(R.id.btnChangePassword);
     }
 }
