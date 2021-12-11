@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Login Firebase</string>
+    
+    <string name="Login">Log in</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="Hello">Hello,</string>
+    <string name="Change_password">Change password</string>
+    <string name="new_password">new password</string>
+    <string name="type_again">type_again</string>
+    <string name="submit">submit</string>
+
+</resources>
