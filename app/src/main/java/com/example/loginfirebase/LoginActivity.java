@@ -1,5 +1,6 @@
 package com.example.loginfirebase;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -41,9 +44,9 @@ public class LoginActivity extends AppCompatActivity {
                 String password = etPassword.getText().toString();
 
                 //Login
-                mAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onSuccess(AuthResult authResult) {
+                    public void onComplete(@NonNull Task<AuthResult> task) {
                         Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
                         Log.d(TAG,"Login Successful");
 
